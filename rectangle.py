@@ -8,6 +8,7 @@ class Rectangle :
         :param length: length of rectangle (horizontal dimension).  Must be >= 0.  Otherwise, set to 0.
         :param length: height of rectangle (vertical dimension).  Must be >= 0.  Otherwise, set to 0.
         """
+        self.start=(4,8)
         if length>=0 :
             self.length=length
         else :
@@ -57,12 +58,12 @@ class Rectangle :
         If any old drawings exist, remove them.
         """
         self.turtle.clear() #Remove old drawings (if they exist)
-        self.turtle.penup()
-        self.turtle.goto(0,0)
+        self.turtle.penup() 
+        self.turtle.goto(self.start[0],self.start[1])
         self.turtle.pendown()
-        self.turtle.goto(self.length,0)
-        self.turtle.goto(self.length,self.height)
-        self.turtle.goto(0,self.height)
-        self.turtle.goto(0,0)
+        self.turtle.goto(self.satrt[0]+self.length,self.start[1])
+        self.turtle.goto(self.start[0]+self.length,self.start[1]+self.height)
+        self.turtle.goto(self.start[0],self.start[1]+self.height)
+        self.turtle.goto(self.start[0],self.start[1])
         self.turtle.penup()
         self.has_been_drawn=True
