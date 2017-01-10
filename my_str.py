@@ -42,5 +42,5 @@ class MyStr(str):#<-----Replace xyz-make a new class, MyStr, that inherits from 
         #       do this in as little as 1 line.
         #YOUR CODE BELOW:
         #################
-        return super(MyStr,self).replace(take_out.lower(),use_this)
+        return super(MyStr,MyStr(self.lower())).replace(take_out.lower(),use_this)
         
